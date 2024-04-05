@@ -26,7 +26,7 @@ def command_completer(prefix, parsed_args, **kwargs):
             return ["argcomplete", "profile", "whitelist"]
 
         elif parsed_args.command[0] == "create":
-            return scenario_dir_names
+            return scenario_dir_names  # Your scenario directory should be listed here
 
         elif parsed_args.command[0] == "destroy":
             return scenario_dir_names + ["all"]
