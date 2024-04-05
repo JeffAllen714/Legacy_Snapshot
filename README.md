@@ -48,8 +48,8 @@ Replace `<your_aws_profile>` with your AWS profile name.
 
 ## Authors
 
-- Jeffrey
-- John
+- Jeffrey Allen
+- John Tabelisma
 
 ## License
 
