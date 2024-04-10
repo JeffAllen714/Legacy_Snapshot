@@ -1,4 +1,4 @@
-# CloudGoat: Legacy Snapshot Scenario
+# Legacy Snapshot Scenario
 
 This repository contains a scenario contribution to the CloudGoat project, which is a collection of vulnerable cloud environments designed to help learn about cloud security risks and mitigation techniques.
 
