@@ -1,6 +1,10 @@
 # Legacy Snapshot Scenario
 
-This repository contains a scenario contribution to the CloudGoat project, which is a collection of vulnerable cloud environments designed to help learn about cloud security risks and mitigation techniques.
+This repository contains a scenario contribution to the CloudGoat project, which is a collection of vulnerable cloud environments designed to help learn about cloud security risks and mitigation techniques. This repository only contains the Legacy Snapshot scenario, that uses the cloudgoat framework.
+
+Please visit the cloudgoat github page for the other scenarios.
+https://github.com/RhinoSecurityLabs/cloudgoat
+
 
 ## Scenario: Unprotected EC2 Instance Snapshots
 
