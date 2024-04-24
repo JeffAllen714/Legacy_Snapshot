@@ -5,25 +5,30 @@ This repository contains a scenario contribution to the CloudGoat project, which
 ## Scenario: Unprotected EC2 Instance Snapshots
 
 **Background:**
+A company relies on AWS for hosting its infrastructure, including an EC2 instance for their server. You will start as an IAM user with insufficient permissions but with the ability to invoke an AWS Lambda function. The Lambda function is misconfigured and allows the user to restore an EC2 instance from a snapshot that they should not have access to.
 
-A company relies on AWS for hosting its infrastructure, including an EC2 instance for their server. You will start as an IAM user with insufficient permissions that has the ability to invoke an AWS Lambda function. The Lambda function is misconfigured, and it allows the user to restore an EC2 instance snapshot that they should not have access to.
 
 **Scenario Start:**
+- Participants begin with an IAM user role (ls-user) that lacks permissions to modify or restore EC2 instance snapshots directly.
 
-Participants begin with an IAM user role that lacks permissions to modify or restore EC2 instance snapshots directly.
 
 **Scenario Flow:**
 
 1. **IAM User Reconnaissance:**
-   - Participants need to perform reconnaissance as the IAM user to identify potential vulnerabilities or misconfigurations.
+   - Participants need to perform reconnaissance as the ls-user to identify potential vulnerabilities or misconfigurations. 
    - Looking through the AWS environment will reveal that there is a snapshot of an EC2 instance that the user doesn't have permissions to restore.
 
 2. **AWS Lambda Invocation:**
-   - Identify and invoke a misconfigured AWS Lambda function that, due to excessive permissions, allows the user to restore the EC2 instance snapshot.
+   - Identify and invoke a misconfigured AWS Lambda function that, due to excessive permissions, allows the user to restore an EC2 instance from the snapshot. 
+   - The ls-user will need to update the Lambda function code with the necessary resources discovered during the reconnaissance phase
 
-3. **Snapshot Restoration:**
-   - The user will find that they have permissions to invoke the provided Lambda function.
-   - This Lambda function can be invoked by the user, which will then restore the snapshot, allowing the user to access its contents.
+3. **Restore Snapshot:**
+   - The ls-user will find that they have permissions to invoke the provided Lambda function. 
+   - This Lambda function can be invoked by the ls-user, which will restore the EC2 instance from the snapshot.
+
+4. **Accessing the Restored EC2 Instance:** 
+   - After invoking the Lambda function, the ls-user can connect to the restored EC2 instance using SSH. 
+   - Inside the EC2 instance, the user will find a flag image, indicating the successful completion of the scenario.
 
 ## Usage
 
@@ -49,7 +54,6 @@ Replace `<your_aws_profile>` with your AWS profile name.
 ## Authors
 
 - Jeffrey Allen
-- John Tabelisma
 
 ## License
 
