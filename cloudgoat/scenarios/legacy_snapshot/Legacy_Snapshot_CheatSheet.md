@@ -37,7 +37,7 @@
 
 7. Download the SSH key from the S3 bucket:
    ```
-   aws --profile ls-user --region us-east-1 s3 cp s3://<bucket-name>/ssh_key.pem ./ssh_key.pem
+   aws --profile ls-user --region us-east-1 s3 cp s3://<bucket-name>/ssh_key ./ssh_key.pem
    chmod 400 ssh_key.pem
    ```
 
