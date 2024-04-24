@@ -41,6 +41,10 @@
    chmod 400 ssh_key.pem
    ```
 
+*Dont forget to change the permissions of the ssh key*
+   ```
+   chmod 400 ssh_key.pem
+   ```
 8. List AMIs:
 ```
 aws --profile ls-user --region us-east-1 ec2 describe-images --owners self
