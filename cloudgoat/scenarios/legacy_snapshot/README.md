@@ -51,10 +51,6 @@ Replace `<your_aws_profile>` with your AWS profile name.
 - The AWS CLI installed and in your `$PATH`, and an AWS account with sufficient privileges to create and destroy resources
 - `jq` (a lightweight and flexible command-line JSON processor)
 
-## Authors
-
-- Jeffrey Allen
-
 ## License
 
 This project is licensed under the BSD-3 Clause.
