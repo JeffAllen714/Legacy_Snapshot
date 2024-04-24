@@ -46,19 +46,19 @@
    chmod 400 ssh_key.pem
    ```
 8. List AMIs:
-```
-aws --profile ls-user --region us-east-1 ec2 describe-images --owners self
-```
+   ```
+   aws --profile ls-user --region us-east-1 ec2 describe-images --owners self
+   ```
 
 8. List subnets:
-```
-aws --profile ls-user --region us-east-1 ec2 describe-subnets
-```
+   ```
+   aws --profile ls-user --region us-east-1 ec2 describe-subnets
+   ```
 
 9. List security groups:
-```
-aws --profile ls-user --region us-east-1 ec2 describe-security-groups
-```
+   ```
+   aws --profile ls-user --region us-east-1 ec2 describe-security-groups
+   ```
 
 
 ## Lambda Function Invocation
