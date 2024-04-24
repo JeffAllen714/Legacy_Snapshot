@@ -18,7 +18,7 @@
 
    Optional: Attempt to restore the snapshot as the ls-user directly (Will not work)
    ```
-   aws ec2 create-volume --snapshot-id <snapshot-id> --availability-zone us-east-1a
+   aws --profile ls-user --region us-east-1 ec2 create-volume --snapshot-id <snapshot-id> --availability-zone us-east-1a
    ```
    
 5. List available Lambda functions:
