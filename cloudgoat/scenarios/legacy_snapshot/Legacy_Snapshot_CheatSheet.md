@@ -6,27 +6,22 @@
    aws configure --profile ls-user
    ```
 
-2. List IAM users:
-   ```
-   aws iam list-users
-   ```
-
-3. List policies attached to the "ls-user":
+2. List policies attached to the "ls-user":
    ```
    aws iam list-attached-user-policies --user-name ls-user
    ```
 
-4. List available EC2 snapshots:
+3. List available EC2 snapshots:
    ```
    aws --profile ls-user --region us-east-1 ec2 describe-snapshots --owner-ids self
    ```
 
-5. List available Lambda functions:
+4. List available Lambda functions:
    ```
    aws --profile ls-user --region us-east-1 lambda list-functions
    ```
 
-6. List S3 buckets and their contents:
+5. List S3 buckets and their contents:
    ```
    aws --profile ls-user --region us-east-1 s3 ls
    ```
@@ -35,23 +30,23 @@
    aws --profile ls-user --region us-east-1 s3 ls s3://<bucket-name>
    ```
 
-7. Download the SSH key from the S3 bucket:
+6. Download the SSH key from the S3 bucket:
    ```
    aws --profile ls-user --region us-east-1 s3 cp s3://<bucket-name>/ssh_key.pem ./ssh_key.pem
    chmod 400 ssh_key.pem
    ```
 
-8. List AMIs:
+7. List AMIs:
 ```
 aws --profile ls-user --region us-east-1 ec2 describe-images --owners self
 ```
 
-9. List subnets:
+8. List subnets:
 ```
 aws --profile ls-user --region us-east-1 ec2 describe-subnets
 ```
 
-10. List security groups:
+9. List security groups:
 ```
 aws --profile ls-user --region us-east-1 ec2 describe-security-groups
 ```
