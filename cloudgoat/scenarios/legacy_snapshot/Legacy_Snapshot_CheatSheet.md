@@ -94,7 +94,7 @@
 
 2. SSH into the restored EC2 instance:
    ```
-   ssh -i ssh_key.pem ec2-user@<public-ip>
+   ssh -i "ssh_key.pem" ubuntu@<public-dns>
    ```
 
 3. Find the flag inside the EC2 instance to complete the scenario.
