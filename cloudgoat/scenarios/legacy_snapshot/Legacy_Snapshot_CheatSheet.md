@@ -6,7 +6,7 @@
    aws configure --profile ls-user
    ```
 
-2.  List IAM users:
+2. List IAM users:
    ```
    aws iam list-users
    ```
