@@ -68,7 +68,7 @@ resource "aws_ami" "flag_ami" {
     volume_type = "gp2"  
     delete_on_termination = true  
   }
-  source_ami = "ami-073c5fc1798eb7056" # This is a public Ubuntu AMI
+  # source_ami = "ami-073c5fc1798eb7056" # This is a public Ubuntu AMI
 }
 
 # Upload the SSH key to S3
