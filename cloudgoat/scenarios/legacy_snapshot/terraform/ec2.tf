@@ -56,7 +56,7 @@ resource "aws_ebs_snapshot" "flag_snapshot" {
 
 # Create the AMI
 resource "aws_ami" "flag_ami" {
-  name                = "CloudGoat Flag AMI"
+  name                = "CloudGoat_Legacy_Snapshot_AMI"
   virtualization_type = "hvm"
   root_device_name    = "/dev/sda1"
   ena_support         = true  # Enable ENA support
