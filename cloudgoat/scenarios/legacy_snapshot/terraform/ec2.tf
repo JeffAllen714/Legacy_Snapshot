@@ -34,8 +34,8 @@ resource "aws_security_group" "ec2_security_group" {
 # Create the EBS volume
 resource "aws_ebs_volume" "flag_volume" {
   availability_zone = aws_subnet.cg_public_subnet_1.availability_zone
-  size              = 8  # Adjusted to match the working AMI
-  type              = "gp3"  # Adjusted to match the working AMI
+  size              = 8  
+  type              = "gp2"  
 
   tags = {
     Name = "CloudGoat Flag Volume"
@@ -47,7 +47,7 @@ resource "aws_ebs_snapshot" "flag_snapshot" {
   volume_id   = aws_ebs_volume.flag_volume.id
   description = "Snapshot containing the flag"
   tags = {
-    Name = "CloudGoat Flag Snapshot"
+    Name = "CloudGoat_Snapshot"
   }
   lifecycle {
     # prevent_destroy = true
@@ -63,9 +63,9 @@ resource "aws_ami" "flag_ami" {
 
   ebs_block_device {
     device_name = "/dev/sda1"
-    snapshot_id = aws_ebs_snapshot.flag_snapshot.id  # Using the scenario-specific snapshot
+    snapshot_id = aws_ebs_snapshot.flag_snapshot.id  # This is the scenario-specific snapshot
     volume_size = 8  
-    volume_type = "gp3"  
+    volume_type = "gp2"  
     delete_on_termination = true  
   }
   source_ami = "ami-073c5fc1798eb7056" # This is a public Ubuntu AMI
